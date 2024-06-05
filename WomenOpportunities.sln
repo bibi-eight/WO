@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DBF2E375-D9C7-44C9-8188-A9E061942186}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WomenOpportunities", "src\WomenOpportunities\WomenOpportunities.csproj", "{5F9704C1-A051-415B-A352-2498090E2387}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{3749202E-4B5D-48A8-B5E0-455EA3E469A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F9704C1-A051-415B-A352-2498090E2387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9704C1-A051-415B-A352-2498090E2387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9704C1-A051-415B-A352-2498090E2387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9704C1-A051-415B-A352-2498090E2387}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5F9704C1-A051-415B-A352-2498090E2387} = {DBF2E375-D9C7-44C9-8188-A9E061942186}
+	EndGlobalSection
+EndGlobal
