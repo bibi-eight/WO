@@ -10,6 +10,8 @@ public class Usuario
     private readonly List<Favoritos> _favoritos = new();
     public IReadOnlyCollection<Favoritos> Favoritos => _favoritos;
 
+    protected Usuario() {}
+
     public Usuario(string nome, Contato contato, Login login)
     {
         Nome = nome;
