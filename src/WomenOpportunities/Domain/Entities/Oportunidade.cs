@@ -4,6 +4,7 @@ namespace WomenOpportunities.Domain.Entities;
 
 public class Oportunidade
 {
+    public const int Max = 250;
     public Guid Id { get; private set; }
     public string Titulo { get; private set; }
     public string Descricao { get; private set; }
