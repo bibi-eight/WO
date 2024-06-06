@@ -11,12 +11,11 @@ public class Oportunidade
     public Contato Contato { get; private set; }
     public int QuantidadeFavoritos { get; private set; }
     public bool Publicado { get; private set; }
-    public Guid InstituicaoId { get; private set; }
     public virtual Instituicao Instituicao { get; private set; }
 
     protected Oportunidade() { }
 
-    public Oportunidade(Guid id, string titulo, string descricao, Contato contato, int quantidadeFavoritos, bool publicado, Guid instituicaoId, Instituicao instituicao)
+    public Oportunidade(Guid id, string titulo, string descricao, Contato contato, int quantidadeFavoritos, bool publicado)
     {
         Id = id;
         Titulo = titulo;
@@ -24,13 +23,13 @@ public class Oportunidade
         Contato = contato;
         QuantidadeFavoritos = quantidadeFavoritos;
         Publicado = publicado;
-        InstituicaoId = instituicaoId;
-        Instituicao = instituicao;
     }
 
     public void AtribuirTitulo(string titulo) => Titulo = titulo;
     public void AtribuirDescricao(string descricao) => Descricao = descricao;
     public void AtribuirContato(Contato contato) => Contato = contato;
+    public void AtribuirInstituicao(Instituicao value) => Instituicao = value;
+
 
     public void Publicar() => Publicado = true;
     public void Ocultar() => Publicado = false;
