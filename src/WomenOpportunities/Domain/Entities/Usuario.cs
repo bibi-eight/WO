@@ -4,6 +4,7 @@ namespace WomenOpportunities.Domain.Entities;
 
 public class Usuario
 {
+    public Guid Id { get; private set; }
     public string Nome { get; private set; }
     public Contato Contato { get; private set; }
     public Login Login { get; private set; }
@@ -12,8 +13,9 @@ public class Usuario
 
     protected Usuario() {}
 
-    public Usuario(string nome, Contato contato, Login login)
+    public Usuario(Guid id, string nome, Contato contato, Login login)
     {
+        Id = id;
         Nome = nome;
         Contato = contato;
         Login = login;
