@@ -11,11 +11,13 @@ public class Oportunidade
     public Contato Contato { get; private set; }
     public int QuantidadeFavoritos { get; private set; }
     public bool Publicado { get; private set; }
+    
+    public Guid InstituicaoId { get; private set; }
     public virtual Instituicao Instituicao { get; private set; }
 
     protected Oportunidade() { }
 
-    public Oportunidade(Guid id, string titulo, string descricao, Contato contato, int quantidadeFavoritos, bool publicado)
+    public Oportunidade(Guid id, string titulo, string descricao, Contato contato, int quantidadeFavoritos, bool publicado, Guid instituicaoId)
     {
         Id = id;
         Titulo = titulo;
@@ -23,6 +25,7 @@ public class Oportunidade
         Contato = contato;
         QuantidadeFavoritos = quantidadeFavoritos;
         Publicado = publicado;
+        InstituicaoId = instituicaoId;
     }
 
     public void AtribuirTitulo(string titulo) => Titulo = titulo;
