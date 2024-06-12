@@ -6,8 +6,4 @@ Um Software é um conjunto de instruções lidas por um computador que permite a
 
 W.O é a sigla em inglês para “Walkover” (“vitória fácil”, em tradução livre), é a punição aplicada a uma equipe quando ela, por algum motivo, não tem condições de disputar ou seguir disputando uma partida. Nosso W.O segue o mesmo raciocínio, Woman Opportunities foi criado para melhorar as condições de oportunidades no universo feminino, criando um espaço único de interação e compartilhamento de oportunidades de todos os tipos - focadas em mulheres, dando assim a oportunidade que as mesmas possuam sua "vitória fácil". Nossa ideia é erradicar a desigualdade dos currículos presente na vida de mulheres em todo o Brasil, desigualdade presente justamente pela falta de conhecimento de tais oportunidades.
 
-
-Em sua ideia inicial, WO foi pensado como  um site em que mulheres ajudariam mulheres.
-
 Com uma base diferente, mas com seu cerne idêntico, apresento-lhes o Women Opportunities em sua melhor versão. Uma api dotnet com banco de dados sql.
-
