@@ -11,7 +11,6 @@ public class Oportunidade
     public Contato Contato { get; private set; }
     public int QuantidadeFavoritos { get; private set; }
     public bool Publicado { get; private set; }
-    
     public Guid InstituicaoId { get; private set; }
     public virtual Instituicao Instituicao { get; private set; }
 

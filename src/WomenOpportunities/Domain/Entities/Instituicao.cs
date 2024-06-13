@@ -9,6 +9,8 @@ public class Instituicao
     public string Nome { get; private set; }
     public Contato Contato { get; private set; }
     public Login Login { get; private set; }
+    public int QuantidadeDeOportunidades { get; set; }
+    
     private readonly List<Oportunidade> _Oportunidades = new();
     public IReadOnlyCollection<Oportunidade> Oportunidades => _Oportunidades;
     
@@ -22,6 +24,12 @@ public class Instituicao
         Login = login;
     }
 
+    public void AdicionarOportunidade(Oportunidade oportunidade)
+    {
+        QuantidadeDeOportunidades++;
+        _Oportunidades.Add(oportunidade);
+    }
+    
     public void AtribuirNome(string nome) => Nome = nome;
     public void AtribuirContato(Contato contato) => Contato = contato;
     public void AtribuirLogin(Login login) => Login = login;
