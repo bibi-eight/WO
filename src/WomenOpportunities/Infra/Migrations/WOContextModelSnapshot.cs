@@ -33,6 +33,9 @@ namespace WomenOpportunities.Migrations
                         .HasColumnType("varchar(250)")
                         .HasColumnName("Nome");
 
+                    b.Property<int>("QuantidadeDeOportunidades")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Instituicoes", (string)null);
@@ -82,6 +85,9 @@ namespace WomenOpportunities.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(250)")
                         .HasColumnName("Nome");
+
+                    b.Property<int>("QuantidadeDeFavoritos")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
