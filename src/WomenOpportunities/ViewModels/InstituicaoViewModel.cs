@@ -2,7 +2,7 @@ using WomenOpportunities.Domain.Entities;
 
 namespace WomenOpportunities.ViewModels;
 
-public class InstituicaoVIewModel
+public class InstituicaoViewModel
 {
     public Guid InstituicaoId { get; set; }
     public string Nome { get; set; }
@@ -13,9 +13,9 @@ public class InstituicaoVIewModel
     public int QuantidadeDeOportunidades { get; set; }
     public IEnumerable<OportunidadeViewModel> Oportunidades { get; set; }
 
-    public static InstituicaoVIewModel Mapear(Instituicao instituicao)
+    public static InstituicaoViewModel Mapear(Instituicao instituicao)
     {
-        return new InstituicaoVIewModel()
+        return new InstituicaoViewModel()
         {
             InstituicaoId = instituicao.Id,
             Nome = instituicao.Nome,
