@@ -5,7 +5,7 @@ namespace WomenOpportunities.Models;
 
 public class InstituicaoModel
 {
-    public Guid Id { get; set; }
+    public Guid InstituicaoId { get; set; }
     public string Nome { get; set; }
     public ContatoModel Contato { get; set; }
     public LoginModel Login { get; set; }

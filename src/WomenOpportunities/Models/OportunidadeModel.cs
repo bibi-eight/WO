@@ -4,7 +4,7 @@ namespace WomenOpportunities.Models;
 
 public class OportunidadeModel
 {
-    public Guid Id { get; set; }
+    public Guid OportunidadeId { get; set; }
     
     [Required(ErrorMessage = "Campo {0} é obrigatório")]
     public string Titulo { get; set; }
