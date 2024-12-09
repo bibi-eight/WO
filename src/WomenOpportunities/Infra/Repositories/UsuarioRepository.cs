@@ -47,6 +47,6 @@ public class UsuarioRepository : IUsuarioRepository
 
     public async Task<IEnumerable<Usuario>> ObterUsuarios()
     {
-        return await _context.Usuarios.ToListAsync();
+        return await _context.Usuarios.ToListAsync();dddddd
     }
 }
