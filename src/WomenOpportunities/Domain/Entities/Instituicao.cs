@@ -3,7 +3,7 @@ using WomenOpportunities.Domain.ObjectValue;
 
 namespace WomenOpportunities.Domain.Entities;
 
-public class Instituicao : Entity
+public class Instituicao : Entity, IAggregateRoot
 {
     public const int Max = 250;
     public string Nome { get; private set; }

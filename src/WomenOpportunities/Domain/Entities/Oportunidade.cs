@@ -3,7 +3,7 @@ using WomenOpportunities.Domain.ObjectValue;
 
 namespace WomenOpportunities.Domain.Entities;
 
-public class Oportunidade : Entity
+public class Oportunidade : Entity, IAggregateRoot
 {
     public const int Max = 250;
     public string Titulo { get; private set; }
