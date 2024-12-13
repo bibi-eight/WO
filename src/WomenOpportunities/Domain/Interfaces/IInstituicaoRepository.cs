@@ -1,12 +1,9 @@
+using EstartandoDevsCore.Data;
 using WomenOpportunities.Domain.Entities;
 
 namespace WomenOpportunities.Domain.Interfaces;
 
-public interface IInstituicaoRepository
+public interface IInstituicaoRepository : IRepository<Instituicao>
 {
-    void CriarInstituicao(Instituicao instituicao);
-    void AtualizarInstituicao(Instituicao instituicao);
-    Task<bool> RemoverInstituicao(Guid id);
-    Task<Instituicao> ObterInstituicaoPorId(Guid instituicaoId);
     Task<IEnumerable<Instituicao>> ObterInstituicoes();
 }

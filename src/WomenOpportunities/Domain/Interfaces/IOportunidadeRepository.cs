@@ -1,12 +1,9 @@
+using EstartandoDevsCore.Data;
 using WomenOpportunities.Domain.Entities;
 
 namespace WomenOpportunities.Domain.Interfaces;
 
-public interface IOportunidadeRepository
+public interface IOportunidadeRepository : IRepository<Oportunidade>
 {
-    void CriarOportunidade(Oportunidade oportunidade);
-    void AtualizarOportunidade(Oportunidade oportunidade);
-    Task<bool> RemoverOportunidade(Guid id);
-    Task<Oportunidade> ObterOportunidadePorId(Guid oportunidadeId);
     Task<IEnumerable<Oportunidade>> ObterOportunidades();
 }
