@@ -1,3 +1,4 @@
+using EstartandoDevsCore.Data;
 using Microsoft.EntityFrameworkCore;
 using WomenOpportunities.Domain.Entities;
 using WomenOpportunities.Domain.Interfaces;
@@ -13,39 +14,35 @@ public class OportunidadeRepository : IOportunidadeRepository
     {
         _context = context;
     }
-
-    public void CriarOportunidade(Oportunidade oportunidade)
-    {
-        _context.Oportunidades.Add(oportunidade);
-    }
-
-    public void AtualizarOportunidade(Oportunidade oportunidade)
-    {
-        _context.Oportunidades.Update(oportunidade);
-    }
-
-    public async Task<bool> RemoverOportunidade(Guid id)
-    {
-        var oportunidade = await _context.Oportunidades.FirstOrDefaultAsync(x => x.Id == id);
-
-        if (oportunidade is null)
-        {
-            return false;
-        }
-
-        _context.Oportunidades.Remove(oportunidade);
-        await _context.SaveChangesAsync();
-
-        return true;    
-    }
-
-    public async Task<Oportunidade> ObterOportunidadePorId(Guid oportunidadeId)
-    {
-        return await _context.Oportunidades.FirstOrDefaultAsync(X => X.Id == oportunidadeId);
-    }
+    public IUnitOfWorks UnitOfWork { get; }
 
     public async Task<IEnumerable<Oportunidade>> ObterOportunidades()
     {
         return await _context.Oportunidades.ToListAsync();
+    }
+
+    public async Task<Oportunidade> ObterPorId(Guid Id)
+    {
+        return await _context.Oportunidades.FirstOrDefaultAsync(x => x.Id == Id);
+    }
+
+    public void Adicionar(Oportunidade entity)
+    {
+        _context.Oportunidades.Add(entity);
+    }
+
+    public void Atualizar(Oportunidade entity)
+    {
+        _context.Oportunidades.Update(entity);
+    }
+
+    public void Apagar(Func<Oportunidade, bool> predicate)
+    {
+        _context.Oportunidades.RemoveRange(_context.Oportunidades.Where(predicate));
+    }
+    
+    public void Dispose()
+    {
+        _context?.Dispose();
     }
 }

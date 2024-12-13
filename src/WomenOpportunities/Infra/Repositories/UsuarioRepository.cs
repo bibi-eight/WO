@@ -1,3 +1,4 @@
+using EstartandoDevsCore.Data;
 using Microsoft.EntityFrameworkCore;
 using WomenOpportunities.Domain.Entities;
 using WomenOpportunities.Domain.Interfaces;
@@ -13,40 +14,36 @@ public class UsuarioRepository : IUsuarioRepository
     {
         _context = context;
     }
-
-    public void CriarUsuario(Usuario usuario)
-    {
-        _context.Usuarios.Add(usuario);
-        _context.SaveChanges();
-    }
-
-    public void AtualizarUsuario(Usuario usuario)
-    {
-        _context.Usuarios.Update(usuario);
-        _context.SaveChanges();    }
-
-    public async Task<bool> RemoverUsuario(Guid id)
-    {
-        var usuario = await _context.Usuarios.FirstOrDefaultAsync(x => x.Id == id);
-
-        if (usuario is null)
-        {
-            return false;
-        }
-
-        _context.Usuarios.Remove(usuario);
-        await _context.SaveChangesAsync();
-
-        return true;    
-    }
-
-    public async Task<Usuario> ObterUsuarioPorId(Guid usuarioId)
-    {
-        return await _context.Usuarios.FirstOrDefaultAsync(x => x.Id == usuarioId);
-    }
+    
+    public IUnitOfWorks UnitOfWork { get; }
 
     public async Task<IEnumerable<Usuario>> ObterUsuarios()
     {
         return await _context.Usuarios.ToListAsync();
+    }
+
+    public async Task<Usuario> ObterPorId(Guid Id)
+    {
+        return await _context.Usuarios.FirstOrDefaultAsync(u => u.Id == Id);
+    }
+
+    public void Adicionar(Usuario entity)
+    {
+        _context.Usuarios.Add(entity);
+    }
+
+    public void Atualizar(Usuario entity)
+    {
+        _context.Usuarios.Update(entity);
+    }
+
+    public void Apagar(Func<Usuario, bool> predicate)
+    {
+        _context.Usuarios.RemoveRange(_context.Usuarios.Where(predicate));
+    }
+
+    public void Dispose()
+    {
+        _context?.Dispose();
     }
 }
