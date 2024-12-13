@@ -1,11 +1,11 @@
+using EstartandoDevsCore.DomainObjects;
 using WomenOpportunities.Domain.ObjectValue;
 
 namespace WomenOpportunities.Domain.Entities;
 
-public class Oportunidade
+public class Oportunidade : Entity
 {
     public const int Max = 250;
-    public Guid Id { get; private set; }
     public string Titulo { get; private set; }
     public string Descricao { get; private set; }
     public Contato Contato { get; private set; }
@@ -16,9 +16,8 @@ public class Oportunidade
 
     protected Oportunidade() { }
 
-    public Oportunidade(Guid id, string titulo, string descricao, Contato contato, int quantidadeFavoritos, bool publicado, Guid instituicaoId)
+    public Oportunidade(string titulo, string descricao, Contato contato, int quantidadeFavoritos, bool publicado, Guid instituicaoId)
     {
-        Id = id;
         Titulo = titulo;
         Descricao = descricao;
         Contato = contato;
